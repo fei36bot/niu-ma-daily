@@ -8,21 +8,28 @@
 </head>
 <body>
   <main class="wrap">
-    <header>
-      <h1>牛马日报</h1>
-      <p class="sub" id="clock"></p>
+    <header class="header">
+      <div>
+        <h1>牛马日报</h1>
+        <p class="sub" id="clock"></p>
+      </div>
+      <div class="header-actions">
+        <button id="exportBtn" type="button" class="btn">导出今日日报</button>
+      </div>
     </header>
     <section class="cards">
       <article class="card">
         <h2>倒计时</h2>
         <ul class="countdown">
+          <li>上班 <strong id="onWork">--</strong></li>
           <li>下班 <strong id="offWork">--</strong></li>
           <li>周末 <strong id="weekend">--</strong></li>
           <li>发薪 <strong id="payday">--</strong></li>
         </ul>
+        <p class="hint" id="scheduleHint"></p>
       </article>
       <article class="card grow">
-        <h2>今日任务 <button id="addTask" type="button">＋</button></h2>
+        <h2>今日任务 <button id="addTask" type="button" title="添加任务">＋</button></h2>
         <ul id="tasks" class="tasks"></ul>
       </article>
       <article class="card">
@@ -30,7 +37,7 @@
         <ul id="money" class="tasks"></ul>
       </article>
     </section>
-    <footer>本地存储 · 零上传 · v0.1</footer>
+    <footer>本地存储 · 零上传 · 效率看板 v0.1.1 · 设置见扩展弹窗</footer>
   </main>
   <script src="newtab.js"></script>
 </body>

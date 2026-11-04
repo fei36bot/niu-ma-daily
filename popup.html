@@ -1,8 +1,27 @@
 <!DOCTYPE html>
-<html lang="zh-CN"><head><meta charset="UTF-8"><title>牛马日报</title>
-<style>body{font-family:system-ui;margin:12px;width:220px;background:#1c1f2a;color:#e8eaed}a{color:#facc15}</style>
-</head><body>
-<p><b>牛马日报</b></p>
-<p>打开新标签页即可看到今日任务与倒计时。</p>
-<p><a href="newtab.html" target="_blank">预览面板</a></p>
-</body></html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<title>牛马日报 · 设置</title>
+<link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <h1>效率看板设置</h1>
+  <p class="lead">自定义上下班与发薪日，写入本地存储。</p>
+  <form id="form">
+    <label>上班时间
+      <input id="workStart" type="time" required />
+    </label>
+    <label>下班时间
+      <input id="workEnd" type="time" required />
+    </label>
+    <label>发薪日（每月几号，1–28）
+      <input id="payday" type="number" min="1" max="28" required />
+    </label>
+    <button type="submit" id="save">保存</button>
+    <p id="msg" class="msg" hidden>已保存</p>
+  </form>
+  <p class="foot"><a href="newtab.html" target="_blank">打开看板</a> · v0.1.1</p>
+  <script src="popup.js"></script>
+</body>
+</html>
