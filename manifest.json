@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "牛马日报 · Daily Board",
+  "description": "新标签页：下班倒计时 + 每日任务打卡 + 空投/搞钱 checklist。本地存储，无上传。",
+  "version": "0.1.0",
+  "chrome_url_overrides": { "newtab": "newtab.html" },
+  "permissions": ["storage", "alarms"],
+  "action": {
+    "default_title": "牛马日报",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

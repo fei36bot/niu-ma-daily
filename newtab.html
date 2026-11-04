@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>牛马日报</title>
+<link rel="stylesheet" href="newtab.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>牛马日报</h1>
+      <p class="sub" id="clock"></p>
+    </header>
+    <section class="cards">
+      <article class="card">
+        <h2>倒计时</h2>
+        <ul class="countdown">
+          <li>下班 <strong id="offWork">--</strong></li>
+          <li>周末 <strong id="weekend">--</strong></li>
+          <li>发薪 <strong id="payday">--</strong></li>
+        </ul>
+      </article>
+      <article class="card grow">
+        <h2>今日任务 <button id="addTask" type="button">＋</button></h2>
+        <ul id="tasks" class="tasks"></ul>
+      </article>
+      <article class="card">
+        <h2>搞钱 checklist</h2>
+        <ul id="money" class="tasks"></ul>
+      </article>
+    </section>
+    <footer>本地存储 · 零上传 · v0.1</footer>
+  </main>
+  <script src="newtab.js"></script>
+</body>
+</html>
