@@ -1,10 +1,14 @@
 {
   "manifest_version": 3,
   "name": "牛马日报 · Daily Board",
-  "description": "新标签页效率看板：上下班/周末/发薪倒计时、每日任务与搞钱 checklist，支持导出今日日报。数据仅存本地。",
-  "version": "0.1.1",
-  "chrome_url_overrides": { "newtab": "newtab.html" },
-  "permissions": ["storage"],
+  "description": "新标签页效率看板：倒计时、可编辑任务与搞钱 checklist（文字自动换行）、导出今日日报。数据仅存本地。",
+  "version": "0.1.2",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "permissions": [
+    "storage"
+  ],
   "action": {
     "default_title": "牛马日报 · 设置",
     "default_popup": "popup.html"

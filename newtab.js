@@ -1,8 +1,8 @@
 const DEFAULT_MONEY = [
-  'X 矿机老跳：推一条自己的项目笔记',
-  '热帖价值回复 ≥5',
-  '空投/测试网：只做零成本可验证步骤',
-  '有真实到账再记一笔'
+  '推进 1 件今天最重要的事',
+  '把待办勾掉已完成项',
+  '学习 / 练习 25 分钟',
+  '记录一条今日收获（可改成你的清单）'
 ];
 
 const DEFAULTS = {
@@ -122,6 +122,11 @@ function save(partial){
   chrome.storage.local.set(partial);
 }
 
+function autosize(ta){
+  ta.style.height = 'auto';
+  ta.style.height = Math.max(20, ta.scrollHeight) + 'px';
+}
+
 function renderTasks(el, items, key){
   el.innerHTML = '';
   items.forEach((item, i) => {
@@ -135,15 +140,21 @@ function renderTasks(el, items, key){
       save({ [key]: items });
       renderTasks(el, items, key);
     });
-    const inp = document.createElement('input');
-    inp.type = 'text';
+    const inp = document.createElement('textarea');
+    inp.className = 'item-text';
+    inp.rows = 1;
     inp.value = item.text;
-    inp.addEventListener('change', () => {
+    inp.setAttribute('aria-label', '清单内容');
+    const persist = () => {
       items[i].text = inp.value.trim() || items[i].text;
       save({ [key]: items });
-    });
+    };
+    inp.addEventListener('input', () => autosize(inp));
+    inp.addEventListener('change', persist);
+    inp.addEventListener('blur', persist);
     li.append(cb, inp);
     el.appendChild(li);
+    autosize(inp);
   });
 }
 
